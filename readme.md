@@ -1,18 +1,17 @@
 # C++ Boilerplate
-[![Build Status](https://travis-ci.org/dpiet/cpp-boilerplate.svg?branch=master)](https://travis-ci.org/dpiet/cpp-boilerplate)
-[![Coverage Status](https://coveralls.io/repos/github/dpiet/cpp-boilerplate/badge.svg?branch=master)](https://coveralls.io/github/dpiet/cpp-boilerplate?branch=master)
+[![Build Status](https://travis-ci.org/s-niket/cpp-boilerplate.svg?branch=master)](https://travis-ci.org/dpiet/cpp-boilerplate)
+[![Coverage Status](https://coveralls.io/repos/github/s-niket/cpp-boilerplate/badge.svg?branch=master)](https://coveralls.io/github/dpiet/cpp-boilerplate?branch=master)
 ---
 
 ## Overview
 
-Simple starter C++ project with:
+An exercise involving usage of Valgrind to identify and fix bugs. Valgrind is a multi-tool useful for identifying undefined behaviour, function and memory profiler, data-race detection and leak checking. Additional tools to valgrind are callgrind and massif that are used here. Callgrind generates an output file that shows the flow of the code and massif shows the memory allocation. KCachegrind is a visualization tool for viewing callgrind files.
 
-- cmake
-- googletest
+The files are in the branch Valgrind_exercise. 
 
 ## Standard install via command-line
 ```
-git clone --recursive https://github.com/dpiet/cpp-boilerplate
+git clone --recursive https://github.com/s-niket/cpp-boilerplate
 cd <path to repository>
 mkdir build
 cd build
@@ -22,7 +21,57 @@ Run tests: ./test/cpp-test
 Run program: ./app/shell-app
 ```
 
-## Building for code coverage (for assignments beginning in Week 4)
+## Using Valgrind 
+
+To install valgrind:
+
+'''
+sudo apt-get install valgrind
+'''
+
+To install KCachegrind:
+
+'''
+sudo apt-get install kcachegrind
+'''
+
+To check for errors:
+
+'''
+cd <path to repo>
+valgrind ./app/shell-app
+'''
+
+For detailed results on memory leaks, use flags: 
+
+'''
+valgrind --leak-check=full --show-leak-kinds=all ./app/shell-app
+'''
+
+For function and memory profiling:
+
+'''
+valgrind --tool=callgrind ./app/shell-app
+valgrind --tool=massif ./app/shell-app
+'''
+
+They generate callgrind and massif files in the build directory.
+
+Visualize the callgrind.output file in KCachegrind:
+'''
+KCachegrind
+'''
+
+Open the callgrind.out file in the tool
+
+To visualize the massif.out file:
+'''
+ms_print <massif.out filename>
+'''
+
+
+
+## Building for code coverage
 ```
 sudo apt-get install lcov
 cmake -D COVERAGE=ON -D CMAKE_BUILD_TYPE=Debug ../
