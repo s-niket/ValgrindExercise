@@ -1,5 +1,3 @@
-## Output of Valgrind
-
 valgrind --leak-check=full ./app/shell-app 
 ==14242== Memcheck, a memory error detector
 ==14242== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
