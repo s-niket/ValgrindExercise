@@ -1,6 +1,6 @@
 # C++ Boilerplate
-[![Build Status](https://travis-ci.org/s-niket/ValgrindExercise.svg?branch=master)](https://travis-ci.org/s-niket/ValgrindExercise)
-[![Coverage Status](https://coveralls.io/repos/github/s-niket/ValgrindExercise/badge.svg?branch=master)](https://coveralls.io/github/s-niket/ValgrindExercise?branch=master)
+[![Build Status](https://travis-ci.org/s-niket/ValgrindExercise.svg?branch=valgrind_exercise)](https://travis-ci.org/s-niket/ValgrindExercise)
+[![Coverage Status](https://coveralls.io/repos/github/s-niket/ValgrindExercise/badge.svg?branch=valgrind_exercise)](https://coveralls.io/github/s-niket/ValgrindExercise?branch=valgrind_exercise)
 ---
 
 ## Overview
